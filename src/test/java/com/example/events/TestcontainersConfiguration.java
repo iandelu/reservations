@@ -1,4 +1,4 @@
-package com.example.reservations;
+package com.example.events;
 
 import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.boot.testcontainers.service.connection.ServiceConnection;

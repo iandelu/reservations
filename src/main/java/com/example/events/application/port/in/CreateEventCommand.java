@@ -1,7 +1,13 @@
 package com.example.events.application.port.in;
 
-import java.time.Instant;
-import java.util.UUID;
+import com.example.events.domain.vo.TimeSlot;
 
+import com.example.events.domain.vo.*;
 public record CreateEventCommand(
-        String name, UUID venueId, Instant start, Instant end, int capacity) {}
+        EventId eventId,
+        VenueId venueId,
+        EventName name,
+        EventDescription description,
+        Capacity capacity,
+        TimeSlot timeSlot
+) {}

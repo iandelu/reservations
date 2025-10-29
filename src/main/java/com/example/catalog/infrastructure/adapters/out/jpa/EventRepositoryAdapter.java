@@ -20,34 +20,14 @@ public class EventRepositoryAdapter implements EventRepositoryPort {
 
     @Override
     public void save(Event e) {
-        var db = new EventEntity();
-        db.setId(e.getEventId().value());
-        db.setVenueId(e.getVenueId().value());
-        db.setName(e.getName().value());
-        db.setDescription(e.getDescription().value());
-        db.setCapacity(e.getCapacity().value());
-        db.setStartAt(e.getTimeSlot().start());
-        db.setEndAt(e.getTimeSlot().end());
-        db.setStatus(e.getStatus().name());
-        db.setVisibility(e.getVisibility().name());
-        db.setCategory(e.getCategory().name());
+        var db = EventMapper.toEntityFrom(e);
         repo.save(db);
 
     }
 
     @Override
     public Optional<Event> findById(UUID id) {
-        return repo.findById(id).map( db ->
-                Event.create(
-                    new EventId(db.getId()),
-                    new VenueId(db.getVenueId()),
-                    new EventName(db.getName()),
-                    new EventDescription(db.getDescription()),
-                    new Capacity(db.getCapacity()),
-                    new TimeSlot(db.getStartAt(), db.getEndAt())
-                )
-
-            );
+        return repo.findById(id).map(EventMapper::toModelFrom);
     }
 
     @Override

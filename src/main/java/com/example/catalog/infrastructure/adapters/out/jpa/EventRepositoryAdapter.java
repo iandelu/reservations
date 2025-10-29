@@ -11,12 +11,9 @@ import java.util.UUID;
 
 @Repository
 public class EventRepositoryAdapter implements EventRepositoryPort {
-
     private final JpaEventRepository repo;
 
     public EventRepositoryAdapter(JpaEventRepository repo){this.repo = repo;}
-
-
 
     @Override
     public void save(Event e) {

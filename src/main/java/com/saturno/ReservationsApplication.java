@@ -1,4 +1,4 @@
-package com.saturno.catalog;
+package com.saturno;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

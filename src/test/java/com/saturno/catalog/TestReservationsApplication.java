@@ -1,5 +1,6 @@
 package com.saturno.catalog;
 
+import com.saturno.ReservationsApplication;
 import org.springframework.boot.SpringApplication;
 
 public class TestReservationsApplication {

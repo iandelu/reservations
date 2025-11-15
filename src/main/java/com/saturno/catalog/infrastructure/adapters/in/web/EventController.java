@@ -25,6 +25,7 @@ public class EventController {
     @PostMapping
     public ResponseEntity<EventResponse> create(@Valid @RequestBody CreateEventRequest dto){
 
+
         return ResponseEntity.ok().body(null);
     }
 }
